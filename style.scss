@@ -42,6 +42,10 @@ html {
 
 
   @media(min-width:769px) {
+    .col-6-lg {
+      flex: 0 0 auto;
+      width: 51.36%;
+    }
     .col-6{
       flex: 0 0 auto;
       width: 50%;
@@ -299,9 +303,9 @@ html {
   .works {
     min-height: 82.9rem;
     background-color: #470fac;
-    &__inner {
-      // padding:0 6.25vw;
-    }
+    // &__inner {
+    //   // padding:0 6.25vw;
+    // }
     &__header {
       @include header();
     }
@@ -355,9 +359,9 @@ html {
     min-height: 86rem;
     background-image: url('images/feature/bg.jpg');
     background-size: cover;
-    &__inner {
-      // padding:0 6.25vw;
-    }
+    // &__inner {
+    //   // padding:0 6.25vw;
+    // }
 
     &__header {
      @include header();
@@ -485,9 +489,53 @@ html {
   }
 
 
-  
+  .token {
+    min-height: 63.3rem;
+    background-image: url('images/Token\ Sale.png');
+    background-size: cover;
+    &__inner {
+      padding: 0 2.6%;
+      display: flex;
+      flex-wrap: wrap;
+      padding-bottom: 10rem;
+    }
 
+    &__data {
+      margin-right: -6rem;
+      &-header{
+        @include header();
+        padding: 0;
+        padding-top: 14rem;
+        text-align: left;
+        margin-bottom: 3rem;
+      }
+      // @media (max-width:768px) {
+      //   &-header {
+      //     @include header();
+      //   }
+      // }
 
+      &-detail{
+        &-image{
+            margin-right: 0.9rem;
+        }
+        & li {
+          display: flex;
+          margin-bottom: 1rem;
+          & p {
+            @include text(1.6rem, );
+            font-family: $lato-font;
+            line-height: 1.5;
+          }
+        }
+      }
+      
+    }
+
+    &__diagram {
+      padding-top: 10rem;
+    }
+  }
 
 
 
