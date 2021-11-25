@@ -1,0 +1,619 @@
+html {
+    font-size: 62.5%;
+  }
+  
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  }
+  
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  a {
+    text-decoration: none;
+  }
+  
+  .row > * {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * .5);
+    padding-left: calc(var(--bs-gutter-x) * .5);
+    margin-top: var(--bs-gutter-y);
+  }
+
+  .container {
+    margin: 0 5rem;
+    color: white;
+  }
+  
+  @media (min-width: 1300px){
+    .container {
+      width: 120rem;
+      margin: 0 auto;
+      color: white;
+    }
+  }
+
+
+  @media(min-width:769px) {
+    .col-6{
+      flex: 0 0 auto;
+      width: 50%;
+    }
+
+    .col-5-lg {
+      flex: 0 0 auto;
+      width: 46.6%;
+    }
+    .col-5 {
+      flex: 0 0 auto;
+      width: 43%;
+    }
+
+    .col-4 {
+      flex: 0 0 auto;
+      width: 35%;
+    }
+
+    .col-3-lg {
+      flex: 0 0 auto;
+      width: 27%;
+    }
+
+    .col-2-lg {
+      flex: 0 0 auto;
+      width: 21%;
+    }
+  }
+
+  @media(min-width:576px) and(max-width:768px) {
+    .col-sm-5 {
+      flex: 0 0 auto;
+      width: 43%;
+    }
+  }
+
+  @media(min-width: 768px) and (max-width: 1300px) {
+    .col-sm-6 {
+      flex: 0 0 auto;
+      width: 50%;
+    }
+
+    .col-sm-12 {
+      flex: 0 0 auto;
+      width: 100%;
+    }
+  }
+
+  //font
+  $monserrat-font: 'Montserrat', sans-serif;
+  $poppins-font: 'Poppins', sans-serif;
+  $lato-font: 'Lato', sans-serif;
+  $myriad-font : 'Myriad Pro', sans-serif;
+                                                
+  @mixin text($size,$weight:400) {
+      font-size: $size;
+      font-weight: $weight;
+  }
+
+  @mixin buton($height,$padding) {
+      line-height: $height;
+      padding: $padding;
+      border-radius: 0.5rem;
+  }
+
+
+  .hamburger {
+    display: none;
+  }
+
+  .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #ffffff;
+  }
+
+  .navbar {
+      width: 100%;
+      position: absolute;
+      background-color: transparent;
+      &__inner {
+          padding-top: 3.6rem;
+          display: flex;
+        //   justify-content: space-between;
+      }
+      &__logo {
+          margin-right: auto;
+      }
+      &__navlist {
+          width: auto;
+          display: flex;
+          align-items: center;
+          list-style: none;
+      }
+
+      &__navitem {
+          padding-right: 2.8125vw;
+          & a {
+              color: white;
+              @include text(1.6rem,bold);
+              font-family: $monserrat-font;
+              text-transform: uppercase;
+          }
+      }
+      &__navitem:last-child{
+        @include buton(2.8125,0 3.4rem );
+        background-color: #da4bfd;
+        border-radius: 0.5rem;
+        cursor: pointer;
+      }
+      @media (max-width: 992px) {
+        &__navitem {
+          padding-right: 2.2vw;
+          & a {
+              color: white;
+              @include text(1.4rem,bold);
+          }
+      }
+        &__navitem:last-child{
+          @include buton(2.8125,0 3rem );
+        }
+
+      }
+
+      @media (max-width: 768px) {
+        &__navlist {
+          position: fixed;
+          left: -100%;
+          top: 0;
+          background-color: #490fb4;
+          width: 85%;
+          border-radius: 10px;
+          text-align: center;
+          transition: 0.3s;
+          box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+          justify-content: space-between;
+        }
+
+        &__navlist.active {
+          left: 0;
+        }
+      
+        &__navitem {
+          margin: 2.5rem 0;
+        }
+        &__navitem:first-child {
+          padding-left: 2.2vw;
+        }
+
+        &__navitem:last-child {
+          margin-right: 2.2vw;
+        }
+
+      
+        .hamburger {
+          display: block;
+          cursor: pointer;
+        }
+      
+        .hamburger.active .bar:nth-child(2) {
+          opacity: 0;
+        }
+      
+        .hamburger.active .bar:nth-child(1) {
+          transform: translateY(8px) rotate(45deg);
+        }
+      
+        .hamburger.active .bar:nth-child(3) {
+          transform: translateY(-8px) rotate(-45deg);
+        }
+      }
+  }
+
+  
+
+
+  
+
+  .fixed {
+    position:fixed;
+    top: 0;
+    background-color: #490fb4;
+    // padding-bottom: 2.5rem;
+  }
+
+
+  .banner {
+    background-image: url('images/banner.jpg');
+    background-size: cover;
+    // background-color: #490fb4;
+    height: 79.1rem;
+    &__content {
+        padding-top: 25.85%;
+        max-width: 45%;
+        &-title {
+            @include text(5rem);
+            line-height: 1.2;
+            font-family: $poppins-font;
+            padding-bottom: 1.5rem
+        }
+        &-subtitle {
+            @include text(1.6rem, 300);
+            line-height: 1.5;
+            font-family: $lato-font;
+            padding-bottom: 5.5rem;
+        }
+
+        &-more {
+            display: inline-block;
+            background-color: #da4bfd;
+            @include text(1.6rem, bold );
+            @include buton(3.4375,0 3.6rem);
+            & a {
+                text-transform: uppercase;
+                color: white;
+                font-family: $poppins-font;
+            }
+        }
+    }
+  }
+
+  @mixin header {
+      padding: 0 26.7%;
+      padding-top: 9rem;
+      text-align: center;
+      margin-bottom: 7rem;
+    
+
+      & p:first-child {
+        @include text(1.4rem);
+        line-height: 1.2rem;
+        text-transform: uppercase;
+        font-family: $poppins-font;
+        color: rgb(218, 75, 253);
+      }
+      & h2 {
+        @include text(4rem,bold );
+        font-family: $poppins-font;
+        line-height: 1.2;
+        text-transform: capitalize;
+      }
+      & p:last-child {
+        @include text(1.4rem);
+        line-height: 1.714;
+        color: white;
+        font-family: $lato-font;
+      }
+  }
+
+  .works {
+    min-height: 82.9rem;
+    background-color: #470fac;
+    &__inner {
+      // padding:0 6.25vw;
+    }
+    &__header {
+      @include header();
+    }
+    @media (max-width:768px) {
+      &__header {
+        padding: 0 15%;
+        padding-top: 9rem;
+      }
+      
+    }
+    &__content {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      padding-bottom: 10rem;
+      &-image {
+        margin-right: 8.4%;
+        margin-bottom: 5rem;
+        & img {
+          margin-left: auto;
+        }
+        @media (max-width:768px) {
+          & img {
+            margin: 0 auto;
+          }
+        }
+        
+      }
+      
+      &-description {
+        & h2 {
+          @include text(3rem, );
+          font-family: $myriad-font;
+          line-height: 1.2;
+        }
+        & h4 {
+          @include text(1.4rem,);
+          font-family: $lato-font;
+          line-height: 1.714;
+        }
+        & p {
+          @include text(1.4rem,);
+          font-family: $lato-font;
+          line-height: 1.714;
+        }
+      }
+    }
+  }
+
+  .feature {
+    min-height: 86rem;
+    background-image: url('images/feature/bg.jpg');
+    background-size: cover;
+    &__inner {
+      // padding:0 6.25vw;
+    }
+
+    &__header {
+     @include header();
+    }
+
+    @media (max-width:768px) {
+      &__header {
+        padding: 0 15%;
+        padding-top: 9rem;
+      }
+      
+    }
+
+    &__list {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    &__item {
+      margin-bottom: 6.5rem;
+      &-image {
+        margin-bottom: 2.5rem;
+      }
+      &-title {
+        @include text(2.4rem,bold );
+        line-height: 1.2;
+        font-family: $poppins-font;
+        text-transform: capitalize;
+        padding-bottom: 1.8rem;
+      }
+      &-description {
+        @include text(1.4rem, );
+        line-height: 1.429;
+        font-family: $lato-font;
+      }
+    }
+  }
+
+  .roadmap {
+    // min-height: 76.4rem;
+    background-color: #470fac;
+    &__header {
+      @include header();
+    }
+
+    @media (max-width:768px) {
+      &__header {
+        padding: 0 15%;
+        padding-top: 9rem;
+      }
+      
+    }
+
+    &__timeline {
+      padding-bottom: 10rem;
+    }
+  }
+
+  .ourteam {
+    min-height: 77.5rem;
+    background-color: #490fb4;
+    &__header {
+      @include header();
+    }
+
+    @media (max-width:768px) {
+      &__header {
+        padding: 0 15%;
+        padding-top: 9rem;
+      }
+      
+    }
+
+    &__teams {
+      padding: 0 2.5%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      &-member {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5rem;
+        &-avatar {
+          margin-right: 2.2rem;
+          width: 16.8rem;
+          height: 16.8rem;
+          & img {
+            border: solid 6px #7d3cf4;
+            border-radius: 50%;
+          }
+          
+        }
+
+        &-information {
+          max-width: 61.3%;
+          & h2 {
+            @include text(2rem, );
+            font-family: $poppins-font;
+            line-height: 1.2;
+          }
+          & p {
+            @include text(1.4rem, );
+            font-family: $myriad-font;
+            line-height: 1.714;
+            padding-bottom: 1.5rem;
+          }
+
+          & ul {
+            display: flex;
+
+            & li {
+              padding-right: 3.4rem;
+              & a {
+                & i {
+                  color: white;
+                  @include text(1.4rem, );
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+  
+
+
+
+
+
+  .footer {
+    min-height: 41.3rem;
+    background-color: #470fac;
+    &__contact {
+      padding-top: 10rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding-bottom: 5rem;
+      margin-bottom: 5rem;
+      border-bottom: solid 1px #5d19db;
+      &-social {
+        margin-bottom: 2.5rem;
+        &-image {
+          margin-bottom: 0.5rem;
+        }
+        &-network {
+
+          display: flex;
+          & a {
+            margin-right: 1rem;
+          }
+        }
+      }
+
+      &-subnav {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-bottom: 2.5rem;
+        & li {
+          & a {
+            color: white;
+            @include text(1.4rem, );
+            font-family: $lato-font;
+            line-height: 2.5;
+          }
+        }
+      }
+
+      &-subscribe {
+        & h2 {
+          @include text(1.8rem, );
+          font-family: $lato-font;
+          line-height: 1.944;
+          margin-bottom: 1rem;
+        }
+
+        &-form{
+          & input {
+            height: 5rem;
+            width: 29.6rem;
+            background-color: #5d19db;
+            border-radius: 0.5rem 0 0 0.5rem;
+            border: none;
+            margin-right: -0.5rem
+    
+          }
+
+          & input::placeholder {
+            @include text(1.4rem, );
+            font-family: $lato-font;
+            color:rgb(179, 141, 250);
+            padding-left: 2.4rem
+          }
+          & button {
+            @include text(1.6rem,bold );
+            padding: 1.6rem 2rem;
+            background-color: #da4bfd;
+            border: none;
+            border-radius: 0 0.5rem 0.5rem 0;
+            color: white;
+          }
+        }
+      }
+    }
+
+    &__bottom {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding-bottom: 7rem;
+      &-copyright {
+        @include text(1.4rem, );
+        font-family: $myriad-font;
+        margin-bottom: 2.5rem;
+        & a {
+          text-decoration: underline;
+          color: #da4bfd;
+        }
+      }
+      &-bar {
+        display: flex;
+        & li {
+          padding:0 2.7rem;
+          border-right: solid 1px #611ddf;
+          & a {
+            @include text(1.4rem,400 );
+            font-family: $lato-font;
+            line-height: 1.2;
+            color: white;
+          }
+        }
+        & li:first-child{
+          padding-left: 0;
+        }
+
+        & li:last-child {
+          padding-right: 0;
+          border-right: none;
+        }
+      }
+    }
+  }
+
+
+
+  
+  
+
+
+ 
+
+
+  
