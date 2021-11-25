@@ -65,6 +65,11 @@ html {
       width: 35%;
     }
 
+    .col-4-sm {
+      flex: 0 0 auto;
+      width: 31.67%;
+    }
+
     .col-3-lg {
       flex: 0 0 auto;
       width: 27%;
@@ -536,7 +541,109 @@ html {
       padding-top: 10rem;
     }
   }
+  
+  .news {
+    min-height: 84rem;
+    background-color: #490fb4;
+    &__header {
+      @include header();
+    }
 
+    
+
+    &__slideshows {
+      &-content {
+ 
+        display: flex;
+
+      }
+      &-group {
+        width: 100%;
+        justify-content: space-between;
+        display: none;
+        flex-wrap: nowrap;
+        overflow: hidden;
+      }
+
+      &-group.active {
+        display: flex;
+      }
+
+
+      &-item {
+        margin-bottom: 5rem;
+        &-image {
+          margin-bottom: 1.8rem
+        }
+        & h2 {
+          @include text(1.8rem,bold );
+          font-family: $lato-font;
+          line-height: 1.333;
+          padding-bottom: 1.2rem;
+        }
+        &-author {
+          display: flex;
+          align-items: center;
+          padding-bottom: 2rem;
+          & h4 {
+            @include text(1.4rem, );
+            font-family: $lato-font;
+            // line-height: 1.714;
+            padding-right: 1.5rem;
+            border-right: solid 1px white;
+          }
+          & h4:last-child {
+            padding-left: 1.5rem;
+            padding-right: 0;
+            border: none;
+          }
+        }
+
+        & p {
+          @include text(1.4rem, );
+          font-family: $lato-font;
+          line-height: 1.429;
+          padding-bottom: 1.5rem;
+        }
+
+        & a {
+          @include text(1.4rem, );
+          font-family: $lato-font;
+          color: rgb(218, 75, 253);
+          line-height: 1.429;
+          text-decoration: underline;
+          text-transform: capitalize;
+        }
+        
+      }
+
+      &-controls {
+        display: flex;
+        &-dot {
+          width: 1.2rem;
+          height: 1.2rem;
+          background-color: white;
+          border-radius: 50%;
+          cursor: pointer;
+          margin-right: 1rem;
+        }
+        &-dot:first-child {
+          margin-left: auto;
+        }
+        &-dot:last-child {
+          margin-right: auto;
+        }
+
+        &-dot.active {
+          background-color: #d736ff;
+        }
+      }
+    }
+  }
+  
+  
+  
+  
 
 
   .footer {
