@@ -741,6 +741,7 @@ a {
   border-radius: 0.5rem 0 0 0.5rem;
   border: none;
   margin-right: -0.5rem;
+  text-indent: 2.4rem;
 }
 .footer__contact-subscribe-form input::placeholder {
   font-size: 1.4rem;

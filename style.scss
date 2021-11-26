@@ -701,15 +701,15 @@ html {
             background-color: #5d19db;
             border-radius: 0.5rem 0 0 0.5rem;
             border: none;
-            margin-right: -0.5rem
-    
+            margin-right: -0.5rem;
+            text-indent: 2.4rem;
           }
 
           & input::placeholder {
             @include text(1.4rem, );
             font-family: $lato-font;
             color:rgb(179, 141, 250);
-            padding-left: 2.4rem
+            padding-left: 2.4rem;
           }
           & button {
             @include text(1.6rem,bold );
