@@ -7,20 +7,45 @@ $(window).bind('scroll', function () {
 });
 
 //navbar
-$('.hamburger').click(function(){
+$('.hamburger').click(function () {
     $(this).toggleClass("active")
     $('.navbar__navlist').toggleClass('active')
 })
 
 //slide 
 $(window).ready(function () {
-    var id = $('.slide.active').attr('id')
-    $('#'+id+'.controls').addClass('active')
-})
-$('.controls').click(function() {
-    $('.controls.active').removeClass('active')
-    $(this).addClass('active')
-    $('.slide.active').removeClass('active')
-    var id = $(this).attr('id')
-    $('#'+id+'.slide').addClass('active')
+    const sliderItems = $('.slider-item');
+    const slidesLength = sliderItems.length;
+    console.log(slidesLength)
+    // const sliderMain = $('.slider-main');
+    const sliderItemWidth = sliderItems[0].offsetWidth;
+    const dotItems = $('.controls');
+    let index = 0;
+    let positionX = 0;
+    $('.controls').click(function () {
+        $('.controls').removeClass('active');
+        $(this).addClass('active')
+        const sliderIndex = parseInt($(this).data('index'));
+        if(sliderIndex != (index + 1)) {
+            if (sliderIndex <= slidesLength -2){
+                index = sliderIndex -1;
+                positionX = -1 * index * (sliderItemWidth + 30)
+                $('.slider-main').css("transform", `translateX(${positionX}px)`);
+            }
+            
+        }
+       
+
+        
+    })
+
+    function handleChangeSlide(dir) {
+        if (dir === 1) {
+            if (index >= slidesLength - 1) {
+                index = slidesLength - 1;
+                return
+            }
+        }
+
+    }
 })

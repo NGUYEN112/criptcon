@@ -238,6 +238,7 @@ html {
     position:fixed;
     top: 0;
     background-color: #490fb4;
+    z-index: 2;
     // padding-bottom: 2.5rem;
   }
 
@@ -552,26 +553,31 @@ html {
     
 
     &__slideshows {
-      &-content {
+      &-inner {
  
         display: flex;
-
-      }
-      &-group {
+        position: relative;
         width: 100%;
-        justify-content: space-between;
-        display: none;
-        flex-wrap: nowrap;
         overflow: hidden;
       }
 
-      &-group.active {
+      &-content {
         display: flex;
+        position: relative;
+        justify-content: space-between;
+        transition: 0.3s linear;
+      }
+      &-group {
+        width: 100%;
+        flex-wrap: nowrap;
+        display: flex;
+        flex: 1 0 100%;
       }
 
 
       &-item {
         margin-bottom: 5rem;
+        margin-right: 3rem;
         &-image {
           margin-bottom: 1.8rem
         }
@@ -638,6 +644,10 @@ html {
           background-color: #d736ff;
         }
       }
+    }
+
+    &-item:last-child {
+      margin-right: 0;
     }
   }
   
