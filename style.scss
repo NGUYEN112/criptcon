@@ -623,6 +623,12 @@ html {
         
       }
 
+      &-item:last-child {
+        margin-right: 0;
+      }
+  
+    
+
       &-controls {
         display: flex;
         &-dot {
@@ -646,9 +652,7 @@ html {
       }
     }
 
-    &-item:last-child {
-      margin-right: 0;
-    }
+    
   }
   
   

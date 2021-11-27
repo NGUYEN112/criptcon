@@ -26,8 +26,9 @@ $(window).ready(function () {
         $('.controls').removeClass('active');
         $(this).addClass('active')
         const sliderIndex = parseInt($(this).data('index'));
+        let screenWidth = $(window).width();
         if(sliderIndex != (index + 1)) {
-            if (sliderIndex <= slidesLength -2){
+            if (screenWidth <= 768 || sliderIndex <= slidesLength -2){
                 index = sliderIndex -1;
                 positionX = -1 * index * (sliderItemWidth + 30)
                 $('.slider-main').css("transform", `translateX(${positionX}px)`);

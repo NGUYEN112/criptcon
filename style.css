@@ -675,6 +675,9 @@ a {
   text-decoration: underline;
   text-transform: capitalize;
 }
+.news__slideshows-item:last-child {
+  margin-right: 0;
+}
 .news__slideshows-controls {
   display: flex;
 }
@@ -694,9 +697,6 @@ a {
 }
 .news__slideshows-controls-dot.active {
   background-color: #d736ff;
-}
-.news-item:last-child {
-  margin-right: 0;
 }
 
 .footer {
