@@ -16,7 +16,7 @@ $('.hamburger').click(function () {
 $(window).ready(function () {
     const sliderItems = $('.slider-item');
     const slidesLength = sliderItems.length;
-    console.log(slidesLength)
+    // console.log(slidesLength)
     // const sliderMain = $('.slider-main');
     const sliderItemWidth = sliderItems[0].offsetWidth;
     const dotItems = $('.controls');
@@ -49,4 +49,18 @@ $(window).ready(function () {
         }
 
     }
+})
+
+//tab 
+$(window).ready(function(){
+    let tabId = $('.tab-link.active').attr('id');
+    $('#'+tabId + '.tab-item').addClass('active');
+    $('.tab-link').click(function(){
+        $('.tab-link').removeClass('active');
+        $(this).addClass('active')
+        $('.tab-item.active').removeClass('active');
+        var Id = $(this).attr('id');
+        $('#'+Id + '.tab-item').addClass('active');
+    })
+    
 })

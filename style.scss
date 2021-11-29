@@ -279,11 +279,14 @@ html {
   }
 
   @mixin header {
-      padding: 0 26.7%;
+      padding: 0 26.25%;
       padding-top: 9rem;
       text-align: center;
       margin-bottom: 7rem;
-    
+  @media (max-width:768px) {
+    padding: 9rem 10% 0;
+    text-align: center;
+  }
 
       & p:first-child {
         @include text(1.4rem);
@@ -654,6 +657,135 @@ html {
 
     
   }
+  
+  .ico {
+    min-height: 59.5rem;
+    background-color: #470fac;
+    background-image: url('images/ico/bg.jpg');
+    background-size: cover;
+    &__inner {
+      padding: 12.7rem 5rem 0;
+      display: flex;
+      flex-wrap: wrap;
+      
+    }
+    @media (max-width:768px){
+      padding-bottom: 5rem;
+    }
+    &__image{
+      margin-right: 7.08%;
+      width: 43.9rem;
+      height: 46.6rem;
+      & img {
+        width: 100%;
+      }
+    }
+    &__content {
+      &-header {
+        @include header();
+        text-align: left;
+        padding: 0;
+        margin-bottom: 3rem;
+      }
+      &-info {
+        margin-bottom: 3.5rem;
+        & li {
+          @include text(1.6rem, );
+          font-family: $lato-font;
+          line-height: 1.5;
+          & i {
+            padding-right: 0.8rem;
+          }
+        }
+      }
+
+      &-button {
+        
+        
+        & a {
+          text-transform: uppercase;
+          color: white;
+          background-color: #da4bfd;
+          border-radius: 0.5rem;
+          cursor: pointer;
+          @include text(1.6rem, bold);
+          font-family: $poppins-font;
+          @include buton(3.4375, 2.2rem);
+        }
+      }
+    }
+  }
+
+  
+
+  .faq {
+    min-height: 77.3rem;
+    background-color: #490fb4;
+    &__header {
+      @include header();
+      margin-bottom: 5rem;
+    }
+
+    &__tab{
+      margin-bottom: 9rem;
+      &-list {
+        display: flex;
+        justify-content: center;
+        
+      }
+      &-item {
+        @include text(1.6rem, );
+        font-family: $lato-font;
+        text-transform: uppercase;
+        line-height: 2.75;
+        margin-right: 4rem;
+        color: #7a41e2;
+        cursor: pointer;
+      }
+
+      &-item:last-child {
+        margin-right: 0;
+      }
+
+      &-item.active {
+        color: white;
+        border-bottom: solid 1px #da4bfd;
+      }
+    }
+
+    &__content {
+      display: none;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      &-tabcontent {
+        margin-bottom: 6.5rem;
+        & h2 {
+          @include text(2rem,bold );
+          font-family: $lato-font;
+          line-height: 1.2;
+
+        }
+        & p {
+          @include text(1.4rem, );
+          font-family: $lato-font;
+          color: rgb(182, 144, 250);
+          line-height: 1.714;
+        }
+      }
+
+      @media (min-width:769px) {
+        &-tabcontent {
+          width: 45%;
+        }
+      }
+    }
+
+    &__content.active {
+      display: flex;
+    }
+  }
+
+
   
   
   
