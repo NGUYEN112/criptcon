@@ -411,7 +411,8 @@ html {
   }
 
   .roadmap {
-    // min-height: 76.4rem;
+    min-height: 76.4rem;
+    
     background-color: #470fac;
     &__header {
       @include header();
@@ -427,8 +428,119 @@ html {
 
     &__timeline {
       padding-bottom: 10rem;
+      &-contain {
+        display: flex;
+        justify-content: space-between;
+      }
+      &-line {
+        border-top: dashed 1px #a387d6;
+        border-bottom: dashed 1px #784fc2;
+        width: 100%;
+        margin-top: 25rem;
+      }
+
+      &-timebot {
+        position: relative;
+        margin-top: -4.7rem;
+        width: 22.5%;
+        &-since {
+          @include text(1.8rem, bold);
+          font-family: $lato-font;
+          line-height: 1.333;
+          text-align: center;
+          margin-bottom: 0.5rem;
+        }
+        &-dotlg {
+          & img {
+            margin: 0 auto;
+          }
+          z-index: 2;
+        }
+        &-line {
+          height: 9rem;
+          border-left: dashed 1px #a387d6;
+          border-right: dashed 1px #784fc2;
+          position: absolute;
+          // top: 3.5rem;
+          left: 50%;
+        }
+
+        &-dotsm {
+          position: absolute;
+          left: 48%;
+          top: 15rem;
+          z-index: 2;
+          & img {
+            margin: 0 auto;
+          }
+        }
+
+        @media (max-width:768px) {
+          &-dotsm {
+            left: 45%;
+          }
+        }
+
+        &-info {
+          position: relative;
+          top: 12.8rem;
+          @include text(1.6rem, );
+          font-family: $lato-font;
+          text-align: center;
+        }
+      }
+
+      &-timetop {
+        position: relative;
+        width: 22.5%;
+        margin-top: -2rem;
+        &-since {
+          @include text(1.8rem, bold);
+          font-family: $lato-font;
+          line-height: 1.333;
+          text-align: center;
+        }
+        &-dotlg {
+          & img {
+            margin: 0 auto;
+          }
+          z-index: 2;
+        }
+        &-line {
+          height: 9rem;
+          border-left: dashed 1px #a387d6;
+          border-right: dashed 1px #784fc2;
+          position: absolute;
+          top: -9rem;
+          left: 50%;
+        }
+
+        &-dotsm {
+          position: absolute;
+          left: 48%;
+          top: -10rem;
+          z-index: 2;
+          & img {
+            margin: 0 auto;
+          }
+        }
+        @media (max-width:768px) {
+          &-dotsm {
+            left: 45%;
+          }
+        }
+
+        &-info {
+          position: absolute;
+          top: -200%;
+          @include text(1.6rem, );
+          font-family: $lato-font;
+          text-align: center;
+        }
+      }
     }
   }
+  
 
   .ourteam {
     min-height: 77.5rem;

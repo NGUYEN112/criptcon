@@ -401,6 +401,7 @@ a {
 }
 
 .roadmap {
+  min-height: 76.4rem;
   background-color: #470fac;
 }
 .roadmap__header {
@@ -445,6 +446,112 @@ a {
 }
 .roadmap__timeline {
   padding-bottom: 10rem;
+}
+.roadmap__timeline-contain {
+  display: flex;
+  justify-content: space-between;
+}
+.roadmap__timeline-line {
+  border-top: dashed 1px #a387d6;
+  border-bottom: dashed 1px #784fc2;
+  width: 100%;
+  margin-top: 25rem;
+}
+.roadmap__timeline-timebot {
+  position: relative;
+  margin-top: -4.7rem;
+  width: 22.5%;
+}
+.roadmap__timeline-timebot-since {
+  font-size: 1.8rem;
+  font-weight: bold;
+  font-family: "Lato", sans-serif;
+  line-height: 1.333;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+.roadmap__timeline-timebot-dotlg {
+  z-index: 2;
+}
+.roadmap__timeline-timebot-dotlg img {
+  margin: 0 auto;
+}
+.roadmap__timeline-timebot-line {
+  height: 9rem;
+  border-left: dashed 1px #a387d6;
+  border-right: dashed 1px #784fc2;
+  position: absolute;
+  left: 50%;
+}
+.roadmap__timeline-timebot-dotsm {
+  position: absolute;
+  left: 48%;
+  top: 15rem;
+  z-index: 2;
+}
+.roadmap__timeline-timebot-dotsm img {
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .roadmap__timeline-timebot-dotsm {
+    left: 45%;
+  }
+}
+.roadmap__timeline-timebot-info {
+  position: relative;
+  top: 12.8rem;
+  font-size: 1.6rem;
+  font-weight: 400;
+  font-family: "Lato", sans-serif;
+  text-align: center;
+}
+.roadmap__timeline-timetop {
+  position: relative;
+  width: 22.5%;
+  margin-top: -2rem;
+}
+.roadmap__timeline-timetop-since {
+  font-size: 1.8rem;
+  font-weight: bold;
+  font-family: "Lato", sans-serif;
+  line-height: 1.333;
+  text-align: center;
+}
+.roadmap__timeline-timetop-dotlg {
+  z-index: 2;
+}
+.roadmap__timeline-timetop-dotlg img {
+  margin: 0 auto;
+}
+.roadmap__timeline-timetop-line {
+  height: 9rem;
+  border-left: dashed 1px #a387d6;
+  border-right: dashed 1px #784fc2;
+  position: absolute;
+  top: -9rem;
+  left: 50%;
+}
+.roadmap__timeline-timetop-dotsm {
+  position: absolute;
+  left: 48%;
+  top: -10rem;
+  z-index: 2;
+}
+.roadmap__timeline-timetop-dotsm img {
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .roadmap__timeline-timetop-dotsm {
+    left: 45%;
+  }
+}
+.roadmap__timeline-timetop-info {
+  position: absolute;
+  top: -200%;
+  font-size: 1.6rem;
+  font-weight: 400;
+  font-family: "Lato", sans-serif;
+  text-align: center;
 }
 
 .ourteam {
