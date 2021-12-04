@@ -606,6 +606,53 @@ a {
 }
 .token__diagram {
   padding-top: 10rem;
+  position: relative;
+}
+.token__diagram-canvas {
+  margin: 0 auto;
+  width: 335px !important;
+  height: 335px !important;
+}
+.token__diagram-percent {
+  width: max-content;
+  text-align: center;
+}
+.token__diagram-percent p:first-child {
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: "Lato", sans-serif;
+}
+.token__diagram-percent p:last-child {
+  font-size: 1.4rem;
+  font-weight: 400;
+  font-family: "Lato", sans-serif;
+}
+.token__diagram-percent:first-child {
+  color: #f8c04e;
+  position: relative;
+  left: 38%;
+}
+.token__diagram-percent:nth-child(2) {
+  color: #ac56f7;
+  position: absolute;
+  left: 70%;
+}
+.token__diagram-percent:nth-child(3) {
+  color: #61f89f;
+  position: absolute;
+  left: 82%;
+  top: 60%;
+}
+.token__diagram-percent:nth-child(4) {
+  color: #5ad6f8;
+  position: absolute;
+  left: 45%;
+  bottom: -10%;
+}
+.token__diagram-percent:nth-child(5) {
+  color: #f85d77;
+  position: absolute;
+  top: 55%;
 }
 
 .news {

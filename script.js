@@ -64,3 +64,34 @@ $(window).ready(function(){
     })
     
 })
+
+
+const ctx = document.getElementById('myChart').getContext('2d');
+const data = {
+    // labels: [
+    // //   'Red',
+    // //   'Blue',
+    // //   'Yellow'
+    // ],
+    datasets: [{
+      label: 'My First Dataset',
+      data: [12, 32, 38,55,73],
+      backgroundColor: [
+        '#f8c04e',
+        '#ac56f7',
+        '#61f89f',
+        '#5ad6f8',
+        '#f85d77'
+      ],
+    borderColor: '#470fac',
+    borderWidth: 4,
+    rotation: -12
+    }]
+  };
+
+const myChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: data,
+    options: {
+    }
+});
